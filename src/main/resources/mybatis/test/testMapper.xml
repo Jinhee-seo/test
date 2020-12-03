@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.exam.test.mapper.TestMapper">
+	<select id="selectTest" resultType="com.example.exam.test.vo.TestVo"> 
+		SELECT userid,
+		 		username
+		  FROM member
+	</select>
+	
+	<select id="selectUser" resultType="com.example.exam.test.vo.TestVo"> 
+		SELECT userid,
+        	   username,
+        	   passwd,
+        	   useyn
+		 FROM member E
+		WHERE userid = '${userid}'
+		  AND passwd = password('${passwd}')
+	</select>
+	
+	<select id="selectMember2" resultType="java.util.Map" >
+		SELECT userid,
+        	   username,
+        	   passwd,
+        	   useyn
+		 FROM member E
+		WHERE userid = #{userid}
+		  AND passwd = password(#{passwd})
+	</select>
+</mapper>

@@ -1,0 +1,12 @@
+package com.example.exam.test.mapper;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.example.exam.test.vo.UserVo;
+
+@Mapper
+public interface UserMapper {
+	//글작성
+    public void userInsert(UserVo vo) throws Exception;
+    public UserVo selectUser(UserVo vo) throws Exception;
+}
